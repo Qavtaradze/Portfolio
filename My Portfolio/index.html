@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio website of David, showcasing frontend development projects and skills.">
+    <meta name="author" content="David">
+    <title>Responsive Portfolio Website Design</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-">D</i>
+                    <div class="logo-text">avid</div>
+                </div>
+                <nav>
+                    <div class="togglebtn" aria-expanded="false" aria-controls="navlinks">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="navlinks" id="navlinks" aria-hidden="true">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                <div class="hero-pic">
+                    <img src="./449913608_1233753141389931_7212878995770401391_n.jpg" alt="Profile Picture of Me">
+                </div>
+                <div class="hero-text">
+                    <h5>Hi, I'm a <span class="input">Frontend Developer</span></h5>
+                    <h1>David</h1>
+                    <p>Proficient in HTML, CSS, and JavaScript with over 3 years of experience, I have a big passion for web development. Additionally, I have strong communication skills which are necessary for remote work.</p>
+
+                    <div class="btn-group">
+                        <a href="My_Resume.docx" download="My_Resume.docx" class="btn active">Download CV</a>
+                    </div>
+
+                    <div class="social">
+                        <a href="https://www.facebook.com/profile.php?id=100084471936444"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://www.linkedin.com/in/me/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/qavta__/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="projects" id="portfolio">
+        <h2>My Projects</h2>
+        <div class="project">
+            <div class="project-info">
+                <h3>Mini Projects</h3>
+                <p>These are some mini projects I did, a calculator, a countdown and a calendar</p>
+                <a href="https://github.com/Qavtaradze/My-portfolio.git" class="btn">View Code</a>
+            </div>
+        </div>
+        <!-- Add more projects similarly -->
+    </section>
+
+    <section class="skills" id="skills">
+        <h2>My Skills</h2>
+        <div class="skill">
+            <h3>HTML</h3>
+            <div class="progress-bar">
+                <div class="progress" style="width: 90%;"></div>
+            </div>
+            <p class="skill-description">Proficient in structuring web pages with semantic HTML5.</p>
+        </div>
+        <div class="skill">
+            <h3>CSS</h3>
+            <div class="progress-bar">
+                <div class="progress" style="width: 85%;"></div>
+            </div>
+            <p class="skill-description">Skilled in creating responsive layouts and styling with CSS3.</p>
+        </div>
+        <div class="skill">
+            <h3>JavaScript</h3>
+            <div class="progress-bar">
+                <div class="progress" style="width: 80%;"></div>
+            </div>
+            <p class="skill-description">Experienced in interactive web development and DOM manipulation.</p>
+        </div>
+        <!-- Add more skills similarly -->
+    </section>
+
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <form action="submit_form.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var typed = new Typed(".input", {
+                strings: ["Frontend Developer", "Backend Developer", "Web Developer"],
+                typeSpeed: 70,
+                backSpeed: 55,
+                loop: true
+            });
+        });
+
+        var togglebtn = document.querySelector(".togglebtn");
+        var navlinks = document.querySelector(".navlinks");
+
+        togglebtn.addEventListener("click", function() {
+            var isOpen = JSON.parse(this.getAttribute("aria-expanded"));
+            this.setAttribute("aria-expanded", !isOpen);
+            navlinks.setAttribute("aria-hidden", isOpen);
+            this.classList.toggle("click");
+            navlinks.classList.toggle("open");
+        });
+
+        function smoothScroll(target, duration) {
+    var targetSection = document.querySelector(target);
+    var targetPosition = targetSection.getBoundingClientRect().top;
+    var startPosition = window.pageYOffset;
+    var distance = targetPosition - 100; // Adjusted for header height
+    var startTime = null;
+
+    function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        var timeElapsed = currentTime - startTime;
+        var run = ease(timeElapsed, startPosition, distance, duration);
+        window.scrollTo(0, run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    }
+
+    function ease(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
+// Smooth scroll for nav links
+var navLinks = document.querySelectorAll('.navlinks a');
+
+navLinks.forEach(function(navLink) {
+    navLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        var targetSectionId = this.getAttribute('href');
+        smoothScroll(targetSectionId, 1000); // Adjust duration as needed
+    });
+});
+    </script>
+</body>
+</html>

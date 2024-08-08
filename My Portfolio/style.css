@@ -1,0 +1,480 @@
+/* Main styles */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body and General Styles */
+body {
+    overflow-x: hidden;
+    background-color: #222;
+    color: #e5e5e5;
+    line-height: 1.6;
+}
+
+/* Hero Header Styles */
+.hero-header {
+    width: 100%;
+    min-height: 100vh;
+    background: #222;
+}
+
+.wrapper {
+    width: 95%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    padding: 40px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo i {
+    height: 45px;
+    width: 45px;
+    background-color: #ff0000; /* Red */
+    border-radius: 50%;
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.logo .logo-text {
+    font-size: 24px;
+    font-weight: 500;
+    color: #ff0000; /* Red */
+}
+
+/* Navigation Styles */
+nav .togglebtn {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+}
+
+nav .togglebtn span {
+    display: block;
+    background-color: #ff0000; /* Red */
+    margin: 5px 0px;
+    width: 100%;
+    height: 3px;
+    transition: 0.3s;
+}
+
+nav .navlinks {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+nav .navlinks li {
+    margin-right: 2.5rem;
+}
+
+nav .navlinks li:last-child {
+    margin-right: 0;
+}
+
+nav .navlinks li a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav .navlinks li a:hover {
+    color: #ff0000; /* Red */
+}
+
+/* Container Styles */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top: 3rem;
+}
+
+/* Hero Picture Styles */
+.container .hero-pic {
+    width: 500px;
+    height: 600px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 15px solid #444;
+    box-shadow: 5px 7px 25px rgba(0, 0, 0, 0.5);
+}
+
+.hero-pic img {
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+}
+
+.hero-pic img:hover {
+    transform: scale(1.2);
+}
+
+/* Hero Text Styles */
+.hero-text {
+    max-width: 500px;
+    padding-left: 2rem;
+}
+
+.hero-text h5 {
+    font-size: 14px;
+}
+
+.hero-text h5 span {
+    color: #ff0000; /* Red */
+    font-size: 16px;
+}
+
+.hero-text h1 {
+    font-size: 3rem;
+}
+
+.hero-text p {
+    margin: 1.5rem 0;
+}
+
+/* Button Group Styles */
+.btn-group {
+    margin-top: 2rem;
+}
+
+.btn-group .btn {
+    border: 2px solid #e5e5e5;
+    color: #fff;
+    background-color: #333;
+    padding: 12px 25px;
+    margin-right: 7px;
+    border-radius: 30px;
+    box-shadow: 0 10px 10px -8px rgba(0, 0, 0, 0.78);
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-group .btn.active {
+    background-color: #ff0000; /* Red */
+    border-color: #ff0000; /* Red */
+}
+
+.btn-group .btn:hover {
+    background-color: #555;
+}
+
+/* Social Media Styles */
+.social {
+    margin-top: 1.5rem;
+}
+
+.social a {
+    margin-right: 10px;
+    font-size: 1.5rem;
+    color: #e5e5e5;
+    transition: transform 0.5s;
+}
+
+.social a:hover {
+    color: #ff0000; /* Red */
+    transform: rotate(360deg);
+}
+
+/* Projects Section Styles */
+.projects {
+    padding: 10rem 0; /* Increased padding */
+    background-color: #111;
+    color: #fff;
+}
+
+.projects h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+}
+
+.project {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4rem; /* Increased margin */
+}
+
+.project img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 4rem; /* Increased margin */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.project img:hover {
+    transform: scale(1.1);
+}
+
+.project-info {
+    max-width: 600px;
+}
+
+.project-info h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project-info p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.project-info .btn {
+    border: 2px solid #e5e5e5;
+    color: #fff;
+    background-color: #333;
+    padding: 12px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.project-info .btn:hover {
+    background-color: #555;
+}
+
+/* Skills Section Styles */
+.skills {
+    padding: 10rem 0; /* Increased padding */
+    background-color: #222;
+    color: #e5e5e5;
+}
+
+.skills h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+}
+
+.skill {
+    margin-bottom: 4rem; /* Increased margin */
+}
+
+.skill h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.progress-bar {
+    width: 100%;
+    background-color: #444;
+    border-radius: 5px;
+}
+
+.progress {
+    height: 20px; /* Increased height */
+    background-color: #ff0000; /* Red */
+    border-radius: 5px;
+    transition: width 0.6s ease;
+}
+
+.skill-description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-top: 1rem;
+}
+
+/* Contact Section Styles */
+.contact {
+    padding: 10rem 0; /* Increased padding */
+    background-color: #111;
+    color: #fff;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+}
+
+.contact form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact label {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.contact input, .contact textarea {
+    padding: 1rem;
+    margin-bottom: 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #444;
+    color: #e5e5e5;
+    font-size: 1.5rem;
+}
+
+.contact textarea {
+    height: 150px;
+}
+
+.contact button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0000; /* Red */
+    color: #fff;
+    cursor: pointer;
+    font-size: 1.5rem;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.contact button:hover {
+    background-color: #e5e5e5;
+    color: #222;
+}
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #333; /* Color of the scrollbar track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #ff0000; /* Red color for the scrollbar handle */
+    border-radius: 10px; /* Rounded corners for the scrollbar handle */
+    border: 3px solid #444; /* Border around the scrollbar handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background-color: #cc0000; /* Darker red on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 930px) {
+    .navlinks {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #222;
+        width: 60%;
+        box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.1);
+        padding: 25px 0px;
+        transition: right 0.5s;
+    }
+
+    .navlinks.open {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #222;
+        width: 100%;
+        box-shadow: 5px 13px 30px rgba(0, 0, 0, 0.1);
+        padding: 25px 0px;
+        transition: right 0.5s;
+    }
+
+    .navlinks li {
+        margin: 10px 0px;
+    }
+
+    .navlinks li a {
+        font-size: 1.5rem;
+    }
+
+    .navlinks li a:hover {
+        color: #ff0000; /* Red */
+    }
+
+    .togglebtn {
+        display: block;
+    }
+
+    .logo {
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding-top: 6rem; /* Adjusted padding */
+    }
+
+    .projects .project,
+    .skills .skill,
+    .contact .contact-form {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .project img {
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+
+    .skill .progress-bar {
+        width: 80%;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-text p {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        padding-top: 2rem;
+    }
+
+    .hero-pic {
+        width: 250px;
+        height: 250px;
+        border: 10px solid #444;
+    }
+}
